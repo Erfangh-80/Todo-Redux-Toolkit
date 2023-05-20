@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 // redux actions
 import { deleteUser } from "./userSlice";
 
-const User = ({ name, email, id }) => {
+const User = ({ btnDeleteId, btnEditId, name, email, id }) => {
   const dispatch = useDispatch();
   return (
     <div className="bg-gray-400 mb-3 p-5 flex items-center justify-between rounded">
@@ -15,7 +15,7 @@ const User = ({ name, email, id }) => {
         <span className="font-normal text-gray-700">{email}</span>
       </div>
       <div className="flex gap-4">
-        <Link to={`/add-or-update-user/${id}`}>
+        <Link  id={btnEditId} to={`/add-or-update-user/${id}`}>
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const User = ({ name, email, id }) => {
             </svg>
           </button>
         </Link>
-        <button onClick={() => dispatch(deleteUser(id))}>
+        <button id={btnDeleteId} onClick={() => dispatch(deleteUser(id))}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

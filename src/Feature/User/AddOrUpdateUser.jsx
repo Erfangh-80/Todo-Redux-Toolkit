@@ -60,12 +60,14 @@ const AddOrUpdateUser = () => {
   return (
     <div className="mt-10 max-w-xl mx-auto">
       <TextFeald
+        nameId="name"
         label="name"
         value={users.name}
         onChange={(event) => setUsers({ ...users, name: event.target.value })}
         inputProps={{ type: "text", placeholder: "Jhon Doe" }}
       />
       <TextFeald
+        nameId="email"
         label="email"
         value={users.email}
         onChange={(event) => setUsers({ ...users, email: event.target.value })}
